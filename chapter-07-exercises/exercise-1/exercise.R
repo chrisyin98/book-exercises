@@ -2,22 +2,25 @@
 
 # Create a vector `names` that contains your name and the names of 2 people 
 # next to you. Print the vector.
-
+names <- c('Aaron', 'Euan')
+print(names)
 
 # Use the colon operator : to create a vector `n` of numbers from 10:49
-
+n <- c(10: 49)
 
 # Use the `length()` function to get the number of elements in `n`
-
+length(n)
 
 # Add 1 to each element in `n` and print the result
-
+n <- n + 1
 
 # Create a vector `m` that contains the numbers 10 to 1 (in that order). 
 # Hint: use the `seq()` function
 
+m <- seq(10, 1)
 
 # Subtract `m` FROM `n`. Note the recycling!
+
 
 
 # Use the `seq()` function to produce a range of numbers from -5 to 10 in `0.1`
