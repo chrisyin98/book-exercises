@@ -1,7 +1,8 @@
 # load relevant libraries
 library("httr")
 library("jsonlite")
-setwd("C:/Users/Christopher/Desktop/R/")
+setwd("C:/Users/Christopher/Desktop/R/book-exercises/chapter-18-exercises/exercise-1")
+
 # Be sure and check the README.md for complete instructions!
 
 
@@ -10,7 +11,7 @@ setwd("C:/Users/Christopher/Desktop/R/")
 
 source("apikey.R")
 # Create a variable `movie_name` that is the name of a movie of your choice.
-movie_name
+movie_name <- "Kingsmen"
 
 # Construct an HTTP request to search for reviews for the given movie.
 # The base URI is `https://api.nytimes.com/svc/movies/v2/`
@@ -24,15 +25,19 @@ movie_name
 
 # Send the HTTP Request to download the data
 # Extract the content and convert it from JSON
-
+request <- GET(paste0("https://api.nytimes.com/svc/movies/v2/", "reviews/search.json"), query = list("query" = movie_name, "api_key" = tmdb_key))
+request_text <- content(request, "text")
+request_from_json <- fromJSON(request_text)
 
 # What kind of data structure did this produce? A data frame? A list?
-
+is.data.frame(request_from_json)
+is.list(request_from_json)
+#list
 
 # Manually inspect the returned data and identify the content of interest 
 # (which are the movie reviews).
 # Use functions such as `names()`, `str()`, etc.
-
+View(request_from_json)
 
 # Flatten the movie reviews content into a data structure called `reviews`
 

@@ -70,17 +70,23 @@ ggplot(data = diamonds_sample) +
 # the x-axis and `price` to the y-axis. Note that by default, column geometry 
 # will us the "sum" of all of the y-values, so that the chart is actually of the
 # TOTAL value of all of the diamonds of that cut!
+ggplot(data = diamonds_sample) +
+  geom_point(mapping = aes(x = cut, y=price, color = cut))
 
 
 # Add an aesthetic property that will _fill_ each bar geometry based on the 
 # `clarity` of the diamonds. 
 # What kind of chart do you get?
 
+ggplot(data = diamonds_sample) +
+  geom_point(mapping = aes(x = cut, y=price, fill = clarity))
 
 
 # Draw a plot of the `diamonds_sample` data (price by carat), with both points 
 # for each diamond AND smoothed lines for each cut (hint: in a separate color)
 # Give the points an `alpha` (transparency) of 0.3 to make the plot look nicer
+ggplot(data = diamonds_sample) +
+  geom_smooth(mapping = aes(x = carat, y =price, color = cut), alpha = 0.3)
 
 
 ## Bonus
