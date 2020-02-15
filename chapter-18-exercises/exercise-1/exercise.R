@@ -1,14 +1,14 @@
 # load relevant libraries
 library("httr")
 library("jsonlite")
-
+setwd("C:/Users/Christopher/Desktop/R/")
 # Be sure and check the README.md for complete instructions!
 
 
 # Use `source()` to load your API key variable from the `apikey.R` file you made.
 # Make sure you've set your working directory!
 
-
+source("apikey.R")
 # Create a variable `movie_name` that is the name of a movie of your choice.
 movie_name
 
