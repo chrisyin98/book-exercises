@@ -8,6 +8,18 @@ library("shiny")
 # `tabPanel()` with a title "Introduction" to represent the first tab.
 # This layout will contain the following elements:
   
+intro_panel <- tabPanel(
+  title = "Introduction", 
+  titlePanel("Income Inequality"),
+  p("The below diagram was created by the New York Times to illustrate the "),
+  img(src = "inequality.png", alt = "Example NYT Chart"),
+)
+
+
+ui <- navbarPage( 
+  title = "Income Inequality",
+  intro_panel 
+)
   # A `titlePanel()` with the text "Income Inequality"
   
 
@@ -50,6 +62,12 @@ library("shiny")
 # Define a variable `growth_panel` for your second page. It should be a
 # `tabPanel()` with a title "Growth Chart" to represent the second tab.
 # This layout will contain the following elements:
+
+growth_panel <- tabPanel(
+  titlePanel("Income growth 1980 - 2014"),
+  sidebarLayout(sidebar_content, main_content)
+  
+)
 
   # A `titlePanel()` with the text "Income growth 1980-2014"
   
